@@ -1,6 +1,6 @@
-# PdStarterKit
+# PdObjects
 
-Ce répertoire fourni une architecture de base pour écrire des objets [Pure Data](https://puredata.info/)
+Ce répertoire regroupe les externals pour [Pure Data](https://puredata.info/) du cours [paccpp](https://github.com/paccpp/paccpp).
 
 ## Installation
 
