@@ -8,7 +8,7 @@ Pour installer ce répertoire et compiler les externals, se reporter au réperto
 
 | Nom       | déscription |
 |-----------|-------------|
-|[pa.dummy](source/projects/pa.dummmy/readme.md) | Select outlet based on input atoms |
+|[pa.dummy](source/projects/pa.dummy) | Select outlet based on input atoms |
 
 ## Liens
 
