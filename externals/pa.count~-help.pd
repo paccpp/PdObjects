@@ -1,0 +1,30 @@
+#N canvas 550 277 614 242 10;
+#X obj 30 42 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X msg 523 11 \; pd dsp 1 \;;
+#X msg 524 46 \; pd dsp 0 \;;
+#X obj 129 43 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 30 110 pa.number~;
+#X obj 30 73 pa.count~ 0 44100;
+#X text 27 19 count min;
+#X text 126 19 count max;
+#X text 96 109 count;
+#X obj 294 203 dac~ 1 2;
+#X obj 294 158 *~ 0.5;
+#X obj 294 112 osc~;
+#X obj 294 67 pa.count~ 0 3000;
+#X obj 294 41 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 387 42 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 291 18 count min;
+#X text 384 18 count max;
+#X connect 0 0 5 0;
+#X connect 3 0 5 1;
+#X connect 5 0 4 0;
+#X connect 10 0 9 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 13 0 12 0;
+#X connect 14 0 12 1;

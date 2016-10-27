@@ -8,7 +8,8 @@ Pour installer ce répertoire et compiler les externals, se reporter au réperto
 
 | Nom       | déscription |
 |-----------|-------------|
-|[pa.dummy](source/projects/pa.dummy) | Select outlet based on input atoms |
+|[pa.dummy](source/projects/pa.dummy)         | Select outlet based on input atoms |
+|[pa.count~](source/projects/pa.count_tilde)  | Outputs a signal increasing by 1 for each sample elapsed |
 
 ## Liens
 
