@@ -1,0 +1,24 @@
+#N canvas 567 231 647 460 10;
+#X obj 120 38 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 -1 256;
+#X obj 120 63 sig~ 440;
+#X obj 120 221 dac~ 1 2, f 9;
+#X obj 202 153 pad.scope~;
+#X obj 120 103 pa.phasor~;
+#X msg 534 56 \; pd dsp \$1 \;;
+#X obj 534 31 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 141 154 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 120 180 *~ 0;
+#X text 327 420 https://github.com/pierreguillot/Pad;
+#X obj 53 153 pa.number~;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 4 0 3 0;
+#X connect 4 0 8 0;
+#X connect 4 0 10 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 1;
+#X connect 8 0 2 0;
+#X connect 8 0 2 1;
