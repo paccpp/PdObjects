@@ -4,7 +4,7 @@
 // WARRANTIES, see the file, "LICENSE.txt," in this distribution.
 */
 
-// A phasor for Pd signal objects
+//! @brief Outputs a ramp between 0. and 1. at a given frequency
 
 #include <m_pd.h>
 

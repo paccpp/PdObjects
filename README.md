@@ -8,8 +8,9 @@ Pour installer ce répertoire et compiler les externals, se reporter au réperto
 
 | Nom       | déscription |
 |-----------|-------------|
-|[pa.dummy](source/projects/pa.dummy)         | Select outlet based on input atoms |
-|[pa.count~](source/projects/pa.count_tilde)  | Outputs a signal increasing by 1 for each sample elapsed |
+|[pa.dummy](source/projects/pa.dummy)           | Select outlet based on input atoms |
+|[pa.count~](source/projects/pa.count_tilde)    | Outputs a signal increasing by 1 for each sample elapsed |
+|[pa.phasor~](source/projects/pa.phasor_tilde)  | Outputs a ramp between 0. and 1. at a given frequency |
 
 ## Liens
 
