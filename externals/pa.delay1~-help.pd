@@ -1,0 +1,7 @@
+#N canvas 428 169 647 460 10;
+#X obj 29 370 dac~ 1 2, f 9;
+#X obj 29 317 pa.delay1~;
+#X obj 29 77 pa.input~;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 0 0 1;
