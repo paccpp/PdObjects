@@ -16,6 +16,7 @@ Pour installer ce répertoire et compiler les externals, se reporter au réperto
 |[pa.osc3~](source/projects/pa.osc3_tilde)      | A sinusoidal oscillator using linear interpolation on a 512+1 point buffer |
 |[pa.delay1~](source/projects/pa.delay1_tilde)  | A fixed delay using static memory allocation |
 |[pa.delay2~](source/projects/pa.delay2_tilde)  | A fixed delay using dynamic memory allocation |
+|[pa.sah~](source/projects/pa.sah_tilde)        | Sample and hold a signal according to a trigger |
 
 ## Liens
 
