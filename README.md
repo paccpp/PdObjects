@@ -17,6 +17,7 @@ Pour installer ce répertoire et compiler les externals, se reporter au réperto
 |[pa.delay1~](source/projects/pa.delay1_tilde)  | A fixed delay using static memory allocation |
 |[pa.delay2~](source/projects/pa.delay2_tilde)  | A fixed delay using dynamic memory allocation |
 |[pa.sah~](source/projects/pa.sah_tilde)        | Sample and hold a signal according to a trigger |
+|[pa.clip~](source/projects/pa.clip_tilde)      | Clip signal between minimum and maximum values |
 
 ## Liens
 
