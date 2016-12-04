@@ -19,6 +19,7 @@ Pour installer ce répertoire et compiler les externals, se reporter au réperto
 |[pa.sah~](source/projects/pa.sah_tilde)        | Sample and hold a signal according to a trigger |
 |[pa.clip~](source/projects/pa.clip_tilde)      | Clip signal between minimum and maximum values |
 |[pa.delay3~](source/projects/pa.delay3_tilde)  | A variable delay line |
+|[pa.delay4~](source/projects/pa.delay4_tilde)  | A signal driven variable delay line |
 
 ## Liens
 
