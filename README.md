@@ -20,6 +20,7 @@ Pour installer ce répertoire et compiler les externals, se reporter au réperto
 |[pa.clip~](source/projects/pa.clip_tilde)      | Clip signal between minimum and maximum values |
 |[pa.delay3~](source/projects/pa.delay3_tilde)  | A variable delay line |
 |[pa.delay4~](source/projects/pa.delay4_tilde)  | A signal driven variable delay line |
+|[pa.delay5~](source/projects/pa.delay5_tilde)  | A single writer / multiple readers delay line |
 
 ## Liens
 

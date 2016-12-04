@@ -1,0 +1,25 @@
+#N canvas 412 169 523 443 10;
+#X obj 12 401 dac~ 1 2, f 9;
+#X msg 61 264 clear;
+#X obj 12 12 pa.input~;
+#X text 209 323 first argument set the buffer size (in samps);
+#X text 209 343 second argument set the number of delays;
+#X obj 61 323 pa.delay5~ 88200 2;
+#X obj 113 265 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 20000 256;
+#X obj 186 265 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 10000 256;
+#X obj 12 286 *~ 0.5;
+#X obj 186 287 sig~ 10000;
+#X obj 113 287 sig~ 20000;
+#X connect 1 0 5 0;
+#X connect 2 0 8 0;
+#X connect 5 0 0 0;
+#X connect 5 1 0 1;
+#X connect 6 0 10 0;
+#X connect 7 0 9 0;
+#X connect 8 0 5 0;
+#X connect 8 0 0 0;
+#X connect 8 0 0 1;
+#X connect 9 0 5 2;
+#X connect 10 0 5 1;
