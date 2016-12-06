@@ -23,7 +23,7 @@ typedef struct _pa_delay5_tilde
 
     t_inlet**   m_inlets;
     t_outlet**  m_outlets;
-    t_int**     m_dspvec;
+    t_int*      m_dspvec;
 
     float       m_f;
 
@@ -151,21 +151,19 @@ static t_int *pa_delay5_tilde_perform(t_int *w)
 
 static void pa_delay5_tilde_dsp(t_pa_delay5_tilde *x, t_signal **sp)
 {
-    x->m_dspvec[0] = (t_int*)x;
-    x->m_dspvec[1] = (t_int*)sp[0]->s_n;
-    x->m_dspvec[2] = (t_int*)sp[0]->s_vec;
+    x->m_dspvec[0] = (t_int)x;
+    x->m_dspvec[1] = (t_int)sp[0]->s_n;
+    x->m_dspvec[2] = (t_int)sp[0]->s_vec;
 
     for(int i = 0; i < (x->m_number_of_readers * 2); ++i)
     {
-        x->m_dspvec[3 + i] = (t_int*)sp[i+1]->s_vec;
+        x->m_dspvec[3 + i] = (t_int)sp[i+1]->s_vec;
     }
 
-    dsp_addv(pa_delay5_tilde_perform,
-             (3 + (x->m_number_of_readers * 2)),
-             (t_int*)x->m_dspvec);
+    dsp_addv(pa_delay5_tilde_perform, (3 + (x->m_number_of_readers * 2)), x->m_dspvec);
 }
 
-static void *pa_delay5_tilde_new(t_symbol *s, int argc, t_atom *argv)
+static void* pa_delay5_tilde_new(t_symbol *s, int argc, t_atom *argv)
 {
     t_pa_delay5_tilde *x = (t_pa_delay5_tilde *)pd_new(pa_delay5_tilde_class);
 
@@ -205,7 +203,7 @@ static void *pa_delay5_tilde_new(t_symbol *s, int argc, t_atom *argv)
 
         // init dsp vector
         // object + vecsize + default inlet + inlets + outlets
-        x->m_dspvec = (t_int**)malloc(sizeof(t_int*) * (3 + (x->m_number_of_readers * 2)));
+        x->m_dspvec = (t_int*)malloc(sizeof(t_int) * (3 + (x->m_number_of_readers * 2)));
 
         // init inputs/outputs
         x->m_inlets = (t_inlet**)malloc(sizeof(t_inlet*) * x->m_number_of_readers);
