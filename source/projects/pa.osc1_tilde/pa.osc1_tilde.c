@@ -8,6 +8,7 @@
 
 #include <m_pd.h>
 
+#define _USE_MATH_DEFINES
 #include <math.h> // cos...
 
 static t_class *pa_osc1_tilde_class;

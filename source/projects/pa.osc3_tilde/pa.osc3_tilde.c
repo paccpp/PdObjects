@@ -7,6 +7,8 @@
 //! @brief A sinusoidal oscillator using linear interpolation on a 512+1 point buffer
 
 #include <m_pd.h>
+
+#define _USE_MATH_DEFINES
 #include <math.h> // cos...
 
 static t_class *pa_osc3_tilde_class;

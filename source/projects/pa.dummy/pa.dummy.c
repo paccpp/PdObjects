@@ -36,7 +36,8 @@ static void pa_dummy_anything(t_pa_dummy *x, t_symbol* s, int argc, t_atom *argv
 {
     post("anything method called with symbol : %s", s->s_name);
     
-    for(int i=0; i < argc; i++)
+    int i = 0;
+    for(; i < argc; ++i)
     {
         if(argv[i].a_type == A_FLOAT)
         {
@@ -53,7 +54,8 @@ static void pa_dummy_list(t_pa_dummy *x, t_symbol* s, int argc, t_atom *argv)
 {
     post("list method called");
     
-    for(int i=0; i < argc; i++)
+    int i = 0;
+    for(; i < argc; ++i)
     {
         if(argv[i].a_type == A_FLOAT)
         {
@@ -74,7 +76,8 @@ static void *pa_dummy_new(t_symbol *name, int argc, t_atom *argv)
     {
         post("Dummy : number of args = %i", argc);
         
-        for(int i=0; i < argc; i++)
+        int i = 0;
+        for(; i < argc; ++i)
         {
             if(argv[i].a_type == A_FLOAT)
             {

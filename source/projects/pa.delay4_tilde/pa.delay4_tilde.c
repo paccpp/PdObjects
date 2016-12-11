@@ -18,7 +18,7 @@ typedef struct _pa_delay4_tilde
     
     float*      m_buffer;
     int         m_buffersize;
-    size_t      m_writer_playhead;
+    int         m_writer_playhead;
     
     t_inlet*    m_in;
     t_outlet*   m_out;

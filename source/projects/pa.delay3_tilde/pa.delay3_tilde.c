@@ -19,8 +19,8 @@ typedef struct _pa_delay3_tilde
     float*      m_buffer;
     int         m_buffersize;
     
-    size_t      m_writer_playhead;
-    size_t      m_reader_playhead;
+    int         m_writer_playhead;
+    int         m_reader_playhead;
     
     t_outlet*   m_out;
     

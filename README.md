@@ -1,4 +1,5 @@
 # PdObjects
+[![Unix Build Status](https://travis-ci.org/paccpp/PdObjects.svg?branch=master)](https://travis-ci.org/paccpp/PdObjects) [![Windows Build status](https://ci.appveyor.com/api/projects/status/qvt1p0h499eiu47p/branch/master?svg=true)](https://ci.appveyor.com/project/eliottparis/pdobjects)
 
 Ce répertoire regroupe les externals pour [Pure Data](https://puredata.info/) du cours [paccpp](https://github.com/paccpp/paccpp).
 
