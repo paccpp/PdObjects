@@ -16,11 +16,12 @@ typedef struct _pa_readbuffer1
     t_word*     m_buffer;
     int         m_size;
     
+    t_outlet*   m_out;
     t_float     m_f;
     
 } t_pa_readbuffer1;
 
-static t_class *pa_readbuffer1_tilde_class;
+static t_class* pa_readbuffer1_tilde_class;
 
 static int pa_readbuffer1_tilde_set_buffer(t_pa_readbuffer1* x, t_symbol* s)
 {
@@ -32,9 +33,7 @@ static int pa_readbuffer1_tilde_set_buffer(t_pa_readbuffer1* x, t_symbol* s)
     
     if(!x->m_name || x->m_name == gensym(""))
     {
-        pd_error(x, "pa.readbuffer1~: array name can not be empty");
-        x->m_name = gensym("");
-        return -1;
+        return -1; // no buffer set
     }
     
     a = (t_garray*)pd_findbyclass(x->m_name, garray_class);
@@ -51,6 +50,10 @@ static int pa_readbuffer1_tilde_set_buffer(t_pa_readbuffer1* x, t_symbol* s)
         pd_error(x, "pa.readbuffer1~: %s array is empty.", x->m_name->s_name);
         return -1;
     }
+    
+    // mark the array as used by the DSP
+    // doing so will cause the prepare method to be called when the array is removed
+    garray_usedindsp(a);
     
     return 0;
 }
@@ -87,7 +90,7 @@ static t_int* pa_readbuffer1_perform(t_int *w)
 }
 
 
-static void pa_readbuffer1_tilde_dsp(t_pa_readbuffer1* x, t_signal **sp)
+static void pa_readbuffer1_tilde_dsp(t_pa_readbuffer1* x, t_signal** sp)
 {
     pa_readbuffer1_tilde_set_buffer(x, x->m_name);
     
@@ -98,7 +101,7 @@ static void pa_readbuffer1_tilde_dsp(t_pa_readbuffer1* x, t_signal **sp)
             (t_int)sp[0]->s_n);
 }
 
-static void *pa_readbuffer1_tilde_new(t_symbol* buffer_name)
+static void* pa_readbuffer1_tilde_new(t_symbol* buffer_name)
 {
     t_pa_readbuffer1* x = (t_pa_readbuffer1 *)pd_new(pa_readbuffer1_tilde_class);
     
@@ -106,7 +109,7 @@ static void *pa_readbuffer1_tilde_new(t_symbol* buffer_name)
     {
         pa_readbuffer1_tilde_set_buffer(x, buffer_name);
         
-        outlet_new((t_object *)x, &s_signal);
+        x->m_out = outlet_new((t_object *)x, &s_signal);
     }
     
     return x;
@@ -114,7 +117,7 @@ static void *pa_readbuffer1_tilde_new(t_symbol* buffer_name)
 
 static void pa_readbuffer1_tilde_free(t_pa_readbuffer1 *x)
 {
-    ;
+    outlet_free(x->m_out);
 }
 
 extern void setup_pa0x2ereadbuffer1_tilde(void)
@@ -125,7 +128,7 @@ extern void setup_pa0x2ereadbuffer1_tilde(void)
     if(c)
     {
         class_addmethod(c, (t_method)pa_readbuffer1_tilde_dsp,           gensym("dsp"),        A_CANT);
-        class_addmethod(c, (t_method)pa_readbuffer1_tilde_set_buffer,    gensym("set"),        A_SYMBOL, 0);
+        class_addmethod(c, (t_method)pa_readbuffer1_tilde_set_buffer,    gensym("set"),        A_DEFSYM, 0);
         CLASS_MAINSIGNALIN(c, t_pa_readbuffer1, m_f);
     }
     
