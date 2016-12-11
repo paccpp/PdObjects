@@ -25,4 +25,5 @@ Pour installer ce répertoire et compiler les externals, se reporter au réperto
 
 ## Liens
 
+- paccpp wiki => ["Anatomie-d'un-objet-PureData"](https://github.com/paccpp/paccpp/wiki/Anatomie-d'un-objet-PureData)
 - ["HOWTO write an External for PureData"](http://pdstatic.iem.at/externals-HOWTO/)
