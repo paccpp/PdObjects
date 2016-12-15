@@ -1,0 +1,32 @@
+#N canvas 438 194 586 181 10;
+#X obj 30 61 sig~ 1;
+#X obj 30 34 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 87 62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 436 35 \; pd dsp \$1 \;;
+#X obj 436 10 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 260 41 osc~ 0.1;
+#X obj 30 135 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1 256;
+#X obj 30 103 pa.snapshot~;
+#X obj 260 137 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.741628 256;
+#X obj 336 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 260 102 pa.snapshot~ 1000;
+#X obj 326 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 108 56 click to trigger;
+#X text 108 68 the output;
+#X text 372 103 outputs at time interval;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 2 0 7 0;
+#X connect 4 0 3 0;
+#X connect 5 0 10 0;
+#X connect 7 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 10 0 11 0;
