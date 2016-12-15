@@ -25,6 +25,7 @@ Pour installer ce répertoire et compiler les externals, se reporter au réperto
 |[pa.readbuffer1~](source/projects/pa.readbuffer1_tilde)  | Access samples of a Pd array |
 |[pa.readbuffer2~](source/projects/pa.readbuffer2_tilde)  | Read samples in a Pd array at a given speed |
 |[pa.snapshot~](source/projects/pa.snapshot_tilde)  | Converts signal into float at a given time interval|
+|[pa.gain~](source/projects/pa.gain_tilde)  | Multiply signal with a smooth transition|
 
 ## Liens
 
