@@ -7,7 +7,9 @@
 #include "Phasor.hpp"
 
 #include <array>
-#include <cmath>
+
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 namespace paccpp
 {
@@ -133,10 +135,10 @@ namespace paccpp
         
         static const costable_t m_costable;
         
-        Phasor<sample_t> m_phasor = 0.;
+        Phasor<sample_t> m_phasor = {};
     };
     
-    // Les variables statiques doivent être initialisées à l'extérieur de la classe: 
+    // Les variables statiques doivent être initialisées à l'extérieur de la classe:
     template<class SampleType>
     typename Osc<SampleType>::costable_t const Osc<SampleType>::m_costable = {};
     
