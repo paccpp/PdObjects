@@ -1,5 +1,5 @@
 # pa.oscbank~
 
-A sinusoidal oscillator using linear interpolation on a cosinuse wavetable.
+A bank of cosine oscillators.
 
 ![pa.oscbank~ capture](pa.oscbank~.png)
