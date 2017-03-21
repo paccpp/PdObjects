@@ -22,7 +22,6 @@ typedef struct _pa_oscbank_tilde
     std::vector<Osc<float>*> m_oscbank;
 
     t_outlet*   m_out;
-    //t_float     m_f;
 
 } t_pa_oscbank_tilde;
 
@@ -140,7 +139,6 @@ extern "C"
                                sizeof(t_pa_oscbank_tilde), CLASS_DEFAULT, A_GIMME, 0);
         if(c)
         {
-            //CLASS_MAINSIGNALIN(c, t_pa_oscbank_tilde, m_f);
             class_addmethod(c, (t_method)pa_oscbank_tilde_dsp,  gensym("dsp"), A_CANT);
             class_addmethod(c, (t_method)pa_oscbank_list,       gensym("list"),     A_GIMME, 0);
         }
