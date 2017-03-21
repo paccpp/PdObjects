@@ -56,7 +56,7 @@ static void *pa_oscpp_tilde_new(t_symbol *s, int argc, t_atom *argv)
     t_pa_oscpp_tilde* x = (t_pa_oscpp_tilde*)pd_new(pa_oscpp_tilde_class);
     if(x)
     {
-        // instantiate a new Phasor object
+        // instantiate a new Osc object
         // Note: dont forget to delete it in the free method !
         x->m_osc = new Osc<float>();
 
@@ -70,7 +70,7 @@ static void pa_oscpp_tilde_free(t_pa_oscpp_tilde* x)
 {
     outlet_free(x->m_out);
 
-    // free the memory for the Phasor object
+    // free the memory for the Osc object
     delete x->m_osc;
 }
 
