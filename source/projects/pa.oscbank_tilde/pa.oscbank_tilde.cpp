@@ -25,7 +25,7 @@ typedef struct _pa_oscbank_tilde
 
 } t_pa_oscbank_tilde;
 
-static void pa_oscbank_list(t_pa_oscbank_tilde* x, t_symbol* s, int argc, t_atom* argv)
+static void pa_oscbank_tilde_list(t_pa_oscbank_tilde* x, t_symbol* s, int argc, t_atom* argv)
 {
     float sr = sys_getsr();
     
@@ -91,7 +91,7 @@ static t_int* pa_oscbank_tilde_perform(t_int* w)
 static void pa_oscbank_tilde_dsp(t_pa_oscbank_tilde* x, t_signal **sp)
 {
     // set samplerate of all oscillators
-    float sr = sys_getsr();
+    const float sr = sys_getsr();
     
     for(Osc<float>* osc : x->m_oscbank)
     {
@@ -139,8 +139,8 @@ extern "C"
                                sizeof(t_pa_oscbank_tilde), CLASS_DEFAULT, A_GIMME, 0);
         if(c)
         {
-            class_addmethod(c, (t_method)pa_oscbank_tilde_dsp,  gensym("dsp"), A_CANT);
-            class_addmethod(c, (t_method)pa_oscbank_list,       gensym("list"),     A_GIMME, 0);
+            class_addmethod(c, (t_method)pa_oscbank_tilde_dsp,  gensym("dsp"),  A_CANT);
+            class_addmethod(c, (t_method)pa_oscbank_tilde_list, gensym("list"), A_GIMME, 0);
         }
 
         pa_oscbank_tilde_class = c;
