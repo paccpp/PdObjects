@@ -1,0 +1,23 @@
+#N canvas 509 89 647 460 10;
+#X obj 70 301 dac~ 1 2, f 12;
+#X obj 202 152 pad.scope~;
+#X obj 475 41 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 475 63 \; pd dsp \$1 \;;
+#X obj 70 263 *~ 0;
+#X obj 91 192 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 327 420 https://github.com/pierreguillot/Pad;
+#X msg 70 23 200 400 600 800 900 1000;
+#X msg 80 53 400 420 480 500 510 600 880 1000 1050;
+#X obj 70 120 pa.oscbank~;
+#X msg 100 83 500 504 505 510 600 601;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X connect 4 0 0 1;
+#X connect 5 0 4 1;
+#X connect 7 0 9 0;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
+#X connect 9 0 4 0;
+#X connect 10 0 9 0;
